@@ -28,7 +28,8 @@
   "exports": {
     ".": {
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js"
+      "require": "./dist/index.cjs.js",
+			"svelte": "./dist/index.js"
     },
     "./package.json": "./package.json"
   },
