@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import { preprocess } from './svelte.config';
 import replace from '@rollup/plugin-replace';
 import pkg from './package.json';
+import css from 'rollup-plugin-css-only';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -28,10 +29,10 @@ export default [{
 		}),
 		svelte({
 			// enable run-time checks when not in production
-			dev: !production,
+			// dev: !production,
 			preprocess,
 		}),
-
+		css({ output: 'bundle.css' }),
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
 		// some cases you'll need additional configuration -
